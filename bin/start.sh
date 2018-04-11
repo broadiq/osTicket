@@ -1,5 +1,5 @@
 #!/bin/sh
-# (C) Campbell Software Solutions 2015
+# (C) BroadIQ, Inc 2018
 set -e
 
 # Populate "/data/upload/include/i18n" volume with language packs
