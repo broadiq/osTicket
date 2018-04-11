@@ -1,7 +1,7 @@
 <?php
-// (C) Campbell Software Solutions 2015
-// Portions (C) 2006-2015 osTicket
-//Configure settings from environmental Iariables
+// (C) BroadIQ, Inc. 2018
+
+//Configure settings from environmental Variables
 $_SERVER['HTTP_ACCEPT_LANGUAGE'] = getenv("LANGUAGE") ?: "en-us";
 $vars = array(
   'name'      => getenv("INSTALL_NAME")  ?: 'My Helpdesk',
