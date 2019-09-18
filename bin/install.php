@@ -15,6 +15,7 @@ $vars = array(
   'prefix'   => getenv("MYSQL_PREFIX")              ?: 'ost_',
   'dbhost'   => getenv("MYSQL_HOST")                ?: 'mysql',
   'dbhostport' => getenv("DBHOSTPORT")        ?: 'localhost:3306',
+  'dbinstall_host'   => getenv("BRIQ_HOST")                ?: 'mysql',
   'dbinstall_port' => getenv("BRIQ_PORT")          ?: '3306',
   'dbname'   => getenv("MYSQL_DATABASE")            ?: 'osticket',
   'dbuser'   => getenv("MYSQL_USER")                ?: 'osticket',
@@ -102,7 +103,7 @@ if (!$linked) {
 echo "Waiting for database TCP connection to become available...\n";
 $s = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
 $t = 0;
-while (!@socket_connect($s,$vars['dbhost'],$vars['dbinstall_port']) && $t < CONNECTION_TIMEOUT_SEC) {
+while (!@socket_connect($s,$vars['dbinstall_host'],$vars['dbinstall_port']) && $t < CONNECTION_TIMEOUT_SEC) {
   $t++;
   if (($t % 15) == 0) {
     echo "Waited for $t seconds...\n";
