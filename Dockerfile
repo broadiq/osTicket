@@ -47,6 +47,7 @@ RUN wget -nv -O osTicket.zip https://github.com/osTicket/osTicket/releases/downl
     chmod 700 /data/upload/setup_hidden
 
 
+
 #RUN wget -nv -O osTicket.zip http://osticket.com/sites/default/files/download/osTicket-v${OSTICKET_VERSION}.zip && \
 #    unzip osTicket.zip && \
 #    rm osTicket.zip && \
@@ -73,6 +74,7 @@ ADD lang/fr.phar /data/upload/include/i18n.dist
 ADD lang/de.phar /data/upload/include/i18n.dist
 ADD lang/es_ES.phar /data/upload/include/i18n.dist
 ADD lang/it.phar /data/upload/include/i18n.dist
+RUN mv /data/upload/include/i18n upload/include/i18n.dist
 
 # Download LDAP plugin
 #RUN wget -nv -O upload/include/plugins/auth-ldap.phar http://osticket.com/sites/default/files/download/plugin/auth-ldap.phar
