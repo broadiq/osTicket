@@ -69,6 +69,11 @@ RUN wget -nv -O osTicket.zip https://github.com/osTicket/osTicket/releases/downl
 RUN mkdir -p /data/upload/include/i18n.dist
 
 
+ADD lang/fr.phar /data/upload/include/i18n.dist
+ADD lang/de.phar /data/upload/include/i18n.dist
+ADD lang/es_ES.phar /data/upload/include/i18n.dist
+ADD lang/it.phar /data/upload/include/i18n.dist
+
 # Download LDAP plugin
 #RUN wget -nv -O upload/include/plugins/auth-ldap.phar http://osticket.com/sites/default/files/download/plugin/auth-ldap.phar
 
